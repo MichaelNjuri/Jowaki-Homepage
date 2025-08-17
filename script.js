@@ -11,127 +11,139 @@ const state = {
     isLoading: false
 };
 
-// Sample Products Data (Unique Finds & Treasures)
+// Sample Products Data (Thrifted Fashion & Styling Accessories)
 const productsData = [
     {
         id: 1,
-        name: "Victorian Music Box",
-        description: "Antique brass music box with intricate engravings, circa 1890",
-        price: 285,
-        category: "vintage",
+        name: "Vintage Denim Jacket",
+        description: "90s oversized denim jacket with unique distressing",
+        price: 35,
+        category: "outerwear",
         tags: ["new", "trending"],
-        image: "🎵",
-        colors: ["brass", "gold"]
+        image: "🧥",
+        colors: ["blue", "light-blue"],
+        size: "M-L"
     },
     {
         id: 2,
-        name: "Rare Comic Collection",
-        description: "First edition superhero comics from the golden age",
-        price: 450,
-        category: "collectibles",
+        name: "Y2K Butterfly Top",
+        description: "Mesh butterfly print top, perfect for layering",
+        price: 22,
+        category: "tops",
         tags: ["trending"],
-        image: "📚",
-        colors: ["multicolor"]
+        image: "👕",
+        colors: ["black", "purple"],
+        size: "S"
     },
     {
         id: 3,
-        name: "Crystal Ball with Stand",
-        description: "Mysterious crystal sphere with ornate bronze stand",
-        price: 125,
-        category: "curiosities",
+        name: "Chunky Gold Chain",
+        description: "Statement gold-toned chain necklace, vintage inspired",
+        price: 18,
+        category: "accessories",
         tags: ["new"],
-        image: "🔮",
-        colors: ["clear", "bronze"]
+        image: "📿",
+        colors: ["gold"],
+        size: "One Size"
     },
     {
         id: 4,
-        name: "Art Deco Mirror",
-        description: "Stunning sunburst mirror from the 1920s era",
-        price: 320,
-        category: "antiques",
+        name: "High-Waisted Mom Jeans",
+        description: "Classic 90s mom jeans with perfect vintage wash",
+        price: 28,
+        category: "bottoms",
         tags: ["sale"],
-        image: "🪞",
-        colors: ["gold", "silver"]
+        image: "👖",
+        colors: ["blue", "indigo"],
+        size: "28W"
     },
     {
         id: 5,
-        name: "Vintage Camera Set",
-        description: "Complete 1960s camera kit with original leather case",
-        price: 195,
-        category: "vintage",
+        name: "Vintage Band Tee",
+        description: "Authentic vintage concert tee with soft worn-in feel",
+        price: 25,
+        category: "tops",
         tags: ["new", "trending"],
-        image: "📷",
-        colors: ["black", "silver"]
+        image: "👕",
+        colors: ["black", "gray"],
+        size: "M"
     },
     {
         id: 6,
-        name: "Ancient Pottery Vase",
-        description: "Hand-thrown ceramic vase with mysterious origin markings",
-        price: 175,
-        category: "antiques",
+        name: "Plaid Mini Skirt",
+        description: "90s grunge plaid mini skirt, perfect for styling",
+        price: 20,
+        category: "bottoms",
         tags: ["trending"],
-        image: "🏺",
-        colors: ["terracotta", "brown"]
+        image: "👗",
+        colors: ["red", "black", "white"],
+        size: "S"
     },
     {
         id: 7,
-        name: "Pocket Watch Collection",
-        description: "Set of three vintage pocket watches, all functional",
-        price: 380,
-        category: "collectibles",
+        name: "Vintage Leather Bag",
+        description: "Genuine leather crossbody bag with vintage charm",
+        price: 32,
+        category: "accessories",
         tags: ["new"],
-        image: "⏰",
-        colors: ["gold", "silver", "bronze"]
+        image: "👜",
+        colors: ["brown", "tan"],
+        size: "One Size"
     },
     {
         id: 8,
-        name: "Mysterious Wooden Box",
-        description: "Intricately carved box with hidden compartments",
-        price: 95,
-        category: "curiosities",
+        name: "Oversized Blazer",
+        description: "80s power blazer with shoulder pads, perfect for styling",
+        price: 30,
+        category: "outerwear",
         tags: ["sale"],
-        image: "📦",
-        colors: ["mahogany", "dark wood"]
+        image: "🧥",
+        colors: ["black", "gray"],
+        size: "L"
     },
     {
         id: 9,
-        name: "Vintage Globe Bar",
-        description: "1970s globe that opens to reveal a hidden bar set",
-        price: 275,
-        category: "vintage",
+        name: "Vintage Sunglasses",
+        description: "Retro cat-eye sunglasses with tinted lenses",
+        price: 15,
+        category: "accessories",
         tags: ["trending"],
-        image: "🌍",
-        colors: ["blue", "gold"]
+        image: "🕶️",
+        colors: ["black", "gold"],
+        size: "One Size"
     },
     {
         id: 10,
-        name: "Antique Compass",
-        description: "Maritime brass compass with original nautical charts",
-        price: 165,
-        category: "antiques",
+        name: "Cropped Cardigan",
+        description: "Soft knit cropped cardigan, perfect for layering",
+        price: 24,
+        category: "tops",
         tags: ["new"],
-        image: "🧭",
-        colors: ["brass", "copper"]
+        image: "🧶",
+        colors: ["cream", "beige"],
+        size: "S-M"
     },
     {
         id: 11,
-        name: "Tarot Card Deck",
-        description: "Hand-painted vintage tarot set with velvet pouch",
-        price: 85,
-        category: "curiosities",
+        name: "Statement Earrings",
+        description: "Bold geometric earrings with vintage appeal",
+        price: 12,
+        category: "accessories",
         tags: ["trending"],
-        image: "🔯",
-        colors: ["purple", "gold"]
+        image: "💎",
+        colors: ["silver", "gold"],
+        size: "One Size"
     },
     {
         id: 12,
-        name: "Retro Robot Toy",
-        description: "1950s tin robot with original wind-up mechanism",
-        price: 220,
-        category: "collectibles",
+        name: "Vintage Graphic Tee",
+        description: "Retro graphic tee with unique print and soft fabric",
+        price: 26,
+        category: "tops",
         tags: ["sale"],
-        image: "🤖",
-        colors: ["silver", "red"]
+        image: "👕",
+        colors: ["white", "yellow"],
+        size: "M"
     }
 ];
 
@@ -288,8 +300,11 @@ function renderProducts(productsToRender = state.products.slice(0, 6)) {
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
                 <p class="product-description">${product.description}</p>
-                <div class="product-colors">
-                    ${product.colors.map(color => `<span class="color-dot" style="background: ${getColorValue(color)}"></span>`).join('')}
+                <div class="product-meta">
+                    <div class="product-colors">
+                        ${product.colors.map(color => `<span class="color-dot" style="background: ${getColorValue(color)}"></span>`).join('')}
+                    </div>
+                    <div class="product-size">Size: ${product.size}</div>
                 </div>
                 <div class="product-price">
                                              <span class="price">$${product.price.toLocaleString()}</span>
@@ -309,20 +324,21 @@ function renderProducts(productsToRender = state.products.slice(0, 6)) {
 
 function getColorValue(color) {
     const colorMap = {
-        brass: '#b8860b',
+        black: '#1f2937',
+        white: '#ffffff',
+        blue: '#2563eb',
+        'light-blue': '#93c5fd',
+        indigo: '#4f46e5',
+        red: '#dc2626',
+        purple: '#8b5cf6',
         gold: '#ffd700',
         silver: '#c0c0c0',
-        bronze: '#cd7f32',
-        copper: '#b87333',
-        black: '#1f2937',
-        blue: '#2563eb',
-        red: '#dc2626',
         brown: '#92400e',
-        terracotta: '#e2725b',
-        mahogany: '#c04000',
-        'dark wood': '#654321',
-        clear: '#e0f2fe',
-        purple: '#8b5cf6',
+        tan: '#d2b48c',
+        gray: '#6b7280',
+        cream: '#fef7cd',
+        beige: '#f5f5dc',
+        yellow: '#eab308',
         multicolor: 'linear-gradient(45deg, #dc2626, #f59e0b, #059669, #2563eb)'
     };
     return colorMap[color] || color;
@@ -371,11 +387,14 @@ function loadMoreProducts() {
                 <div class="product-info">
                     <h3 class="product-name">${product.name}</h3>
                     <p class="product-description">${product.description}</p>
-                    <div class="product-colors">
-                        ${product.colors.map(color => `<span class="color-dot" style="background: ${getColorValue(color)}"></span>`).join('')}
-                    </div>
-                    <div class="product-price">
-                        <span class="price">$${product.price.toLocaleString()}</span>
+                                         <div class="product-meta">
+                         <div class="product-colors">
+                             ${product.colors.map(color => `<span class="color-dot" style="background: ${getColorValue(color)}"></span>`).join('')}
+                         </div>
+                         <div class="product-size">Size: ${product.size}</div>
+                     </div>
+                     <div class="product-price">
+                         <span class="price">$${product.price.toLocaleString()}</span>
                         <button class="add-to-cart" onclick="addToCart(${product.id})">
                             <i class="fas fa-shopping-bag"></i>
                         </button>
@@ -798,10 +817,22 @@ const additionalStyles = `
         color: var(--medium-gray);
     }
     
+    .product-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    
     .product-colors {
         display: flex;
         gap: 0.25rem;
-        margin-bottom: 0.5rem;
+    }
+    
+    .product-size {
+        font-size: 0.75rem;
+        color: var(--medium-gray);
+        font-weight: 500;
     }
     
     .color-dot {
@@ -834,4 +865,4 @@ window.removeFromCart = removeFromCart;
 window.updateCartQuantity = updateCartQuantity;
 window.scrollToSection = scrollToSection;
 
-console.log('🔍 OddFynds - Unique Treasures Marketplace Loaded! ✨');
+console.log('👗 OddFynds - Thrifted Fashion & Style Loaded! 🌱');
