@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OddFynds - Thrifted Fashion & Style</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'primary': {
+                            50: '#f0f4ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81'
+                        },
+                        'accent': {
+                            400: '#fb7185',
+                            500: '#f43f5e',
+                            600: '#e11d48'
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-in-out',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-900 overflow-x-hidden">
+    
+    <!-- Hero Section with Integrated Navigation -->
+    <section class="relative min-h-screen hero-gradient flex flex-col">
+        <!-- Floating Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float" style="animation-delay: 0s;"></div>
+            <div class="absolute top-10 right-20 w-16 h-16 bg-white/10 rounded-full animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-20 left-20 w-24 h-24 bg-white/10 rounded-full animate-float" style="animation-delay: 4s;"></div>
+            <div class="absolute bottom-10 right-10 w-12 h-12 bg-white/10 rounded-full animate-float" style="animation-delay: 6s;"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="relative z-50 p-6">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <!-- Logo -->
+                <div class="text-white">
+                    <h1 class="text-2xl font-display font-bold">
+                        Odd<span class="text-yellow-300">Fynds</span>
+                    </h1>
+                    <p class="text-sm text-white/80">Thrifted Fashion & Style</p>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white hover:text-yellow-300 transition-colors font-medium">Home</a>
+                    <a href="shop.html" class="text-white hover:text-yellow-300 transition-colors font-medium">Shop</a>
+                    <a href="about.html" class="text-white hover:text-yellow-300 transition-colors font-medium">About</a>
+                    <a href="contact.html" class="text-white hover:text-yellow-300 transition-colors font-medium">Contact</a>
+                </div>
+
+                <!-- Icons -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-white hover:text-yellow-300 transition-colors">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+                    <button class="relative text-white hover:text-yellow-300 transition-colors" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag text-lg"></i>
+                        <span class="absolute -top-2 -right-2 bg-accent-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center" id="cart-count">0</span>
+                    </button>
+                    <button class="text-white hover:text-yellow-300 transition-colors">
+                        <i class="fas fa-user text-lg"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden mt-4 glass-effect rounded-lg p-4 hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-white hover:text-yellow-300 transition-colors">Home</a>
+                    <a href="shop.html" class="text-white hover:text-yellow-300 transition-colors">Shop</a>
+                    <a href="about.html" class="text-white hover:text-yellow-300 transition-colors">About</a>
+                    <a href="contact.html" class="text-white hover:text-yellow-300 transition-colors">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="flex-1 flex items-center justify-center px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-white space-y-6 animate-slide-up">
+                    <h2 class="text-5xl lg:text-7xl font-display font-bold leading-tight">
+                        <span class="block">Thrift</span>
+                        <span class="block text-yellow-300">Different.</span>
+                        <span class="block">Style Unique.</span>
+                    </h2>
+                    <p class="text-xl text-white/90 leading-relaxed max-w-lg">
+                        Discover pre-loved fashion gems and styling accessories that tell a story. 
+                        Sustainable fashion meets Gen Z style.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="shop.html" class="bg-white text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center space-x-2">
+                            <span>Shop Thrifted</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-colors flex items-center justify-center space-x-2">
+                            <i class="fas fa-play"></i>
+                            <span>Our Impact</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 animate-fade-in">
+                    <div class="glass-effect rounded-2xl p-6 text-center text-white">
+                        <div class="text-3xl font-bold text-yellow-300 mb-2">1K+</div>
+                        <div class="text-sm text-white/80">Unique Pieces</div>
+                    </div>
+                    <div class="glass-effect rounded-2xl p-6 text-center text-white">
+                        <div class="text-3xl font-bold text-yellow-300 mb-2">500+</div>
+                        <div class="text-sm text-white/80">Happy Thrifters</div>
+                    </div>
+                    <div class="glass-effect rounded-2xl p-6 text-center text-white">
+                        <div class="text-3xl font-bold text-yellow-300 mb-2">♻️</div>
+                        <div class="text-sm text-white/80">Eco-Friendly</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    Shop by <span class="text-primary-600">Category</span>
+                </h2>
+                <p class="text-gray-600 text-lg">Find your perfect thrifted piece</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Category 1 -->
+                <div class="group cursor-pointer" onclick="window.location.href='shop.html?category=tops'">
+                    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-pink-400 to-purple-600 h-64 mb-4">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-tshirt text-6xl text-white"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-semibold text-lg">Thrifted Tops</h3>
+                            <p class="text-sm opacity-90">Vintage tees & blouses</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="group cursor-pointer" onclick="window.location.href='shop.html?category=bottoms'">
+                    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-blue-400 to-indigo-600 h-64 mb-4">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-user-alt text-6xl text-white"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-semibold text-lg">Bottoms</h3>
+                            <p class="text-sm opacity-90">Jeans & unique finds</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="group cursor-pointer" onclick="window.location.href='shop.html?category=accessories'">
+                    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-600 h-64 mb-4">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-gem text-6xl text-white"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-semibold text-lg">Accessories</h3>
+                            <p class="text-sm opacity-90">Jewelry & styling pieces</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="group cursor-pointer" onclick="window.location.href='shop.html?category=outerwear'">
+                    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-400 to-teal-600 h-64 mb-4">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-user-tie text-6xl text-white"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="font-semibold text-lg">Outerwear</h3>
+                            <p class="text-sm opacity-90">Jackets & layers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">
+                    Latest <span class="text-primary-600">Finds</span>
+                </h2>
+                <p class="text-gray-600 text-lg">Fresh thrifted pieces just added</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="featured-products">
+                <!-- Products will be loaded by JavaScript -->
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="shop.html" class="bg-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-700 transition-colors inline-flex items-center space-x-2">
+                    <span>View All Products</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-display font-bold text-gray-900 mb-6">
+                        Our <span class="text-primary-600">Story</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                        OddFynds was born from a love of unique fashion and a commitment to sustainability. 
+                        We carefully curate pre-loved clothing and styling accessories that help you express 
+                        your individuality while making a positive impact on the planet.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-recycle text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Sustainable Fashion</h3>
+                                <p class="text-gray-600">Reducing fashion waste one piece at a time</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-heart text-purple-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Carefully Curated</h3>
+                                <p class="text-gray-600">Every piece is hand-selected for quality and style</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-star text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Quality Guaranteed</h3>
+                                <p class="text-gray-600">Pre-loved doesn't mean pre-worn out</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="bg-primary-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-700 transition-colors inline-flex items-center space-x-2">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl p-8 text-white h-96 flex items-end">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Sustainable Style</h3>
+                            <p class="text-white/90">Fashion with a conscience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 bg-primary-600">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-display font-bold text-white mb-4">Stay in Style</h2>
+            <p class="text-xl text-white/90 mb-8">Get first dibs on our latest thrifted finds and styling tips</p>
+            
+            <div class="flex flex-col sm:flex-row max-w-md mx-auto gap-4">
+                <input type="email" placeholder="Enter your email" 
+                       class="flex-1 px-6 py-4 rounded-full border-0 focus:ring-2 focus:ring-white/50 outline-none">
+                <button class="bg-white text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div>
+                    <h3 class="text-2xl font-display font-bold mb-4">
+                        Odd<span class="text-yellow-300">Fynds</span>
+                    </h3>
+                    <p class="text-gray-400 mb-6">Sustainable thrifted fashion for the conscious trendsetter.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/oddfynds/" target="_blank" 
+                           class="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="index.html" class="block text-gray-400 hover:text-white transition-colors">Home</a>
+                        <a href="shop.html" class="block text-gray-400 hover:text-white transition-colors">Shop</a>
+                        <a href="about.html" class="block text-gray-400 hover:text-white transition-colors">About</a>
+                        <a href="contact.html" class="block text-gray-400 hover:text-white transition-colors">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Customer Care -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Customer Care</h4>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Size Guide</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Shipping Info</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Returns</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">FAQ</a>
+                    </div>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Connect</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fab fa-instagram mr-2"></i> @oddfynds</p>
+                        <p><i class="fas fa-envelope mr-2"></i> hello@oddfynds.com</p>
+                        <p><i class="fas fa-heart mr-2"></i> Sustainable Fashion</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 OddFynds. All rights reserved. Thrift different, style unique 🌱</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="fixed inset-y-0 right-0 z-50 w-96 bg-white shadow-2xl transform translate-x-full transition-transform duration-300" id="cart-sidebar">
+        <div class="flex flex-col h-full">
+            <!-- Cart Header -->
+            <div class="flex items-center justify-between p-6 border-b">
+                <h3 class="text-lg font-semibold">Your Finds</h3>
+                <button onclick="toggleCart()" class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Cart Items -->
+            <div class="flex-1 overflow-y-auto p-6" id="cart-items">
+                <div class="text-center text-gray-500 mt-20">
+                    <i class="fas fa-shopping-bag text-4xl mb-4"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+
+            <!-- Cart Footer -->
+            <div class="border-t p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-lg font-semibold">Total:</span>
+                    <span class="text-lg font-bold" id="cart-total">$0.00</span>
+                </div>
+                <button class="w-full bg-primary-600 text-white py-3 rounded-full font-semibold hover:bg-primary-700 transition-colors">
+                    Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="fixed inset-0 bg-black/50 z-40 opacity-0 invisible transition-all duration-300" id="cart-overlay" onclick="toggleCart()"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
