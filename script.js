@@ -11,87 +11,127 @@ const state = {
     isLoading: false
 };
 
-// Sample Products Data (Kenyan Fashion Inspired)
+// Sample Products Data (Unique Finds & Treasures)
 const productsData = [
     {
         id: 1,
-        name: "Maasai Sunset Dress",
-        description: "Contemporary dress inspired by traditional Maasai patterns",
-        price: 4500,
-        category: "traditional",
+        name: "Victorian Music Box",
+        description: "Antique brass music box with intricate engravings, circa 1890",
+        price: 285,
+        category: "vintage",
         tags: ["new", "trending"],
-        image: "👗",
-        colors: ["red", "orange", "gold"]
+        image: "🎵",
+        colors: ["brass", "gold"]
     },
     {
         id: 2,
-        name: "Nairobi Street Jacket",
-        description: "Urban-inspired jacket with Kenyan flag accents",
-        price: 6800,
-        category: "contemporary",
+        name: "Rare Comic Collection",
+        description: "First edition superhero comics from the golden age",
+        price: 450,
+        category: "collectibles",
         tags: ["trending"],
-        image: "🧥",
-        colors: ["black", "red", "green"]
-    },
-    {
-        id: 3,
-        name: "Beaded Heritage Necklace",
-        description: "Handcrafted beaded necklace by local artisans",
-        price: 2300,
-        category: "accessories",
-        tags: ["new"],
-        image: "📿",
+        image: "📚",
         colors: ["multicolor"]
     },
     {
+        id: 3,
+        name: "Crystal Ball with Stand",
+        description: "Mysterious crystal sphere with ornate bronze stand",
+        price: 125,
+        category: "curiosities",
+        tags: ["new"],
+        image: "🔮",
+        colors: ["clear", "bronze"]
+    },
+    {
         id: 4,
-        name: "Kikoy Print Shirt",
-        description: "Modern shirt featuring traditional Kikoy patterns",
-        price: 3200,
-        category: "traditional",
+        name: "Art Deco Mirror",
+        description: "Stunning sunburst mirror from the 1920s era",
+        price: 320,
+        category: "antiques",
         tags: ["sale"],
-        image: "👕",
-        colors: ["blue", "white"]
+        image: "🪞",
+        colors: ["gold", "silver"]
     },
     {
         id: 5,
-        name: "Safari Chic Boots",
-        description: "Leather boots perfect for urban adventures",
-        price: 7500,
-        category: "footwear",
+        name: "Vintage Camera Set",
+        description: "Complete 1960s camera kit with original leather case",
+        price: 195,
+        category: "vintage",
         tags: ["new", "trending"],
-        image: "👢",
-        colors: ["brown", "tan"]
+        image: "📷",
+        colors: ["black", "silver"]
     },
     {
         id: 6,
-        name: "Ankara Fusion Skirt",
-        description: "Vibrant Ankara print in contemporary silhouette",
-        price: 3800,
-        category: "contemporary",
+        name: "Ancient Pottery Vase",
+        description: "Hand-thrown ceramic vase with mysterious origin markings",
+        price: 175,
+        category: "antiques",
         tags: ["trending"],
-        image: "👗",
-        colors: ["yellow", "blue", "red"]
+        image: "🏺",
+        colors: ["terracotta", "brown"]
     },
     {
         id: 7,
-        name: "Maasai Warrior Bracelet",
-        description: "Bold bracelet inspired by Maasai warrior traditions",
-        price: 1800,
-        category: "accessories",
+        name: "Pocket Watch Collection",
+        description: "Set of three vintage pocket watches, all functional",
+        price: 380,
+        category: "collectibles",
         tags: ["new"],
-        image: "⌚",
-        colors: ["red", "black"]
+        image: "⏰",
+        colors: ["gold", "silver", "bronze"]
     },
     {
         id: 8,
-        name: "Kenyan Cotton Polo",
-        description: "Premium cotton polo with subtle Kenyan motifs",
-        price: 2900,
-        category: "contemporary",
+        name: "Mysterious Wooden Box",
+        description: "Intricately carved box with hidden compartments",
+        price: 95,
+        category: "curiosities",
         tags: ["sale"],
-        image: "👔",
-        colors: ["white", "navy", "green"]
+        image: "📦",
+        colors: ["mahogany", "dark wood"]
+    },
+    {
+        id: 9,
+        name: "Vintage Globe Bar",
+        description: "1970s globe that opens to reveal a hidden bar set",
+        price: 275,
+        category: "vintage",
+        tags: ["trending"],
+        image: "🌍",
+        colors: ["blue", "gold"]
+    },
+    {
+        id: 10,
+        name: "Antique Compass",
+        description: "Maritime brass compass with original nautical charts",
+        price: 165,
+        category: "antiques",
+        tags: ["new"],
+        image: "🧭",
+        colors: ["brass", "copper"]
+    },
+    {
+        id: 11,
+        name: "Tarot Card Deck",
+        description: "Hand-painted vintage tarot set with velvet pouch",
+        price: 85,
+        category: "curiosities",
+        tags: ["trending"],
+        image: "🔯",
+        colors: ["purple", "gold"]
+    },
+    {
+        id: 12,
+        name: "Retro Robot Toy",
+        description: "1950s tin robot with original wind-up mechanism",
+        price: 220,
+        category: "collectibles",
+        tags: ["sale"],
+        image: "🤖",
+        colors: ["silver", "red"]
     }
 ];
 
@@ -252,7 +292,7 @@ function renderProducts(productsToRender = state.products.slice(0, 6)) {
                     ${product.colors.map(color => `<span class="color-dot" style="background: ${getColorValue(color)}"></span>`).join('')}
                 </div>
                 <div class="product-price">
-                    <span class="price">KSh ${product.price.toLocaleString()}</span>
+                                             <span class="price">$${product.price.toLocaleString()}</span>
                     <button class="add-to-cart" onclick="addToCart(${product.id})">
                         <i class="fas fa-shopping-bag"></i>
                     </button>
@@ -269,17 +309,20 @@ function renderProducts(productsToRender = state.products.slice(0, 6)) {
 
 function getColorValue(color) {
     const colorMap = {
-        red: '#dc2626',
-        orange: '#ea580c',
-        gold: '#f59e0b',
+        brass: '#b8860b',
+        gold: '#ffd700',
+        silver: '#c0c0c0',
+        bronze: '#cd7f32',
+        copper: '#b87333',
         black: '#1f2937',
-        green: '#059669',
         blue: '#2563eb',
-        white: '#ffffff',
-        navy: '#1e40af',
+        red: '#dc2626',
         brown: '#92400e',
-        tan: '#d97706',
-        yellow: '#eab308',
+        terracotta: '#e2725b',
+        mahogany: '#c04000',
+        'dark wood': '#654321',
+        clear: '#e0f2fe',
+        purple: '#8b5cf6',
         multicolor: 'linear-gradient(45deg, #dc2626, #f59e0b, #059669, #2563eb)'
     };
     return colorMap[color] || color;
@@ -332,7 +375,7 @@ function loadMoreProducts() {
                         ${product.colors.map(color => `<span class="color-dot" style="background: ${getColorValue(color)}"></span>`).join('')}
                     </div>
                     <div class="product-price">
-                        <span class="price">KSh ${product.price.toLocaleString()}</span>
+                        <span class="price">$${product.price.toLocaleString()}</span>
                         <button class="add-to-cart" onclick="addToCart(${product.id})">
                             <i class="fas fa-shopping-bag"></i>
                         </button>
@@ -473,7 +516,7 @@ function renderCartItems() {
             <div class="cart-item-image">${item.image}</div>
             <div class="cart-item-details">
                 <h4>${item.name}</h4>
-                <p class="cart-item-price">KSh ${item.price.toLocaleString()}</p>
+                                 <p class="cart-item-price">$${item.price.toLocaleString()}</p>
                 <div class="quantity-controls">
                     <button onclick="updateCartQuantity(${item.id}, ${item.quantity - 1})">-</button>
                     <span>${item.quantity}</span>
@@ -626,7 +669,7 @@ const additionalStyles = `
         position: fixed;
         top: 100px;
         right: -300px;
-        background: var(--primary-green);
+        background: var(--electric-teal);
         color: white;
         padding: 1rem 1.5rem;
         border-radius: var(--radius-lg);
@@ -660,15 +703,15 @@ const additionalStyles = `
     }
     
     .notification.success {
-        background: var(--primary-green);
+        background: var(--electric-teal);
     }
     
     .notification.error {
-        background: var(--primary-red);
+        background: var(--sunset-orange);
     }
     
     .notification.info {
-        background: var(--electric-blue);
+        background: var(--mystic-blue);
     }
     
     .bounce {
@@ -709,7 +752,7 @@ const additionalStyles = `
     }
     
     .cart-item-price {
-        color: var(--primary-red);
+        color: var(--primary-purple);
         font-weight: 600;
         margin-bottom: 0.5rem;
     }
@@ -745,7 +788,7 @@ const additionalStyles = `
     }
     
     .remove-item:hover {
-        color: var(--primary-red);
+        color: var(--sunset-orange);
         background: var(--light-gray);
     }
     
@@ -791,4 +834,4 @@ window.removeFromCart = removeFromCart;
 window.updateCartQuantity = updateCartQuantity;
 window.scrollToSection = scrollToSection;
 
-console.log('🇰🇪 Uhuru Threads - Modern Kenyan Fashion Store Loaded! 🎉');
+console.log('🔍 OddFynds - Unique Treasures Marketplace Loaded! ✨');

@@ -6,30 +6,30 @@
 }
 
 :root {
-    /* Kenyan-inspired Color Palette */
-    --primary-red: #dc2626;
-    --primary-black: #1f2937;
-    --primary-green: #059669;
-    --accent-gold: #f59e0b;
+    /* OddFynds Brand Colors */
+    --primary-purple: #6a4c93;
+    --primary-black: #1a1a2e;
+    --primary-gold: #ffd700;
+    --accent-copper: #cd7f32;
     
     /* Gen Z Colors */
-    --neon-pink: #ff0080;
-    --electric-blue: #00d4ff;
-    --sunset-orange: #ff6b35;
-    --mint-green: #4ade80;
-    --purple-haze: #8b5cf6;
+    --neon-purple: #8b5cf6;
+    --electric-teal: #14b8a6;
+    --sunset-orange: #f97316;
+    --mint-green: #10b981;
+    --mystic-blue: #3b82f6;
     
     /* Neutral Colors */
     --white: #ffffff;
     --light-gray: #f8fafc;
     --medium-gray: #64748b;
-    --dark-gray: #334155;
-    --black: #0f172a;
+    --dark-gray: #374151;
+    --black: #0f0f23;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--neon-pink) 0%, var(--electric-blue) 100%);
-    --gradient-secondary: linear-gradient(135deg, var(--sunset-orange) 0%, var(--accent-gold) 100%);
-    --gradient-hero: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-black) 50%, var(--primary-green) 100%);
+    --gradient-primary: linear-gradient(135deg, var(--neon-purple) 0%, var(--electric-teal) 100%);
+    --gradient-secondary: linear-gradient(135deg, var(--sunset-orange) 0%, var(--primary-gold) 100%);
+    --gradient-hero: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-black) 50%, var(--accent-copper) 100%);
     --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
     
     /* Typography */
@@ -164,7 +164,7 @@ body {
 }
 
 .nav-link:hover {
-    color: var(--neon-pink);
+    color: var(--neon-purple);
 }
 
 .nav-link:hover::after {
@@ -198,7 +198,7 @@ body {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: var(--neon-pink);
+    background: var(--neon-purple);
     color: var(--white);
     font-size: 0.75rem;
     font-weight: 600;
@@ -431,7 +431,7 @@ body {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--accent-gold);
+    color: var(--primary-gold);
     margin-bottom: var(--spacing-xs);
 }
 
@@ -534,7 +534,7 @@ body {
 }
 
 .category-arrow {
-    color: var(--neon-pink);
+    color: var(--neon-purple);
     font-size: 1.125rem;
     transition: var(--transition-normal);
 }
@@ -658,7 +658,7 @@ body {
 .price {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--primary-red);
+    color: var(--primary-purple);
 }
 
 .add-to-cart {
@@ -719,7 +719,7 @@ body {
 }
 
 .feature-item i {
-    color: var(--primary-green);
+    color: var(--electric-teal);
     font-size: 1.25rem;
 }
 
@@ -799,7 +799,7 @@ body {
 
 #subscribe-btn {
     background: var(--white);
-    color: var(--neon-pink);
+    color: var(--neon-purple);
 }
 
 #subscribe-btn:hover {
@@ -829,7 +829,7 @@ body {
 .footer-section h4 {
     font-size: 1.125rem;
     margin-bottom: var(--spacing-md);
-    color: var(--accent-gold);
+    color: var(--primary-gold);
 }
 
 .footer-section ul {
@@ -1114,5 +1114,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--neon-pink);
+    background: var(--neon-purple);
 }
